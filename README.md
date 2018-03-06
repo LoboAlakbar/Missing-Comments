@@ -9,6 +9,7 @@ help you in the future.
 
 In this exercise you will work through the empty comment sections
 and describe the purpose of each portion of the code.
+Do this for index.html, socrates.js, and socrates.css.
 Add comments to all sections that have an empty /* */, //, or \<!-- -->.
 
 There is no collaboration for the first hour.

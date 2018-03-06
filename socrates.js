@@ -60,7 +60,7 @@ class Puzzle{
             return "You already guessed this letter!";
         }
     }
-
+    //
     guessWord(word){
         let winner = false;
         let guess = this.wordToArray(word);
@@ -100,7 +100,7 @@ class User{
     }
 
     useSpecial(type){
-        //T
+        //
         let special = this.specials.inventory;
         console.log("Made it inside the use special function."); //Console used for debugging
         switch(type){//
@@ -149,7 +149,7 @@ class User{
         }
 
     }
-
+//
     guessLetter(letter){
         let res = this.puzzle.guessLetter(letter);
 
@@ -172,7 +172,7 @@ class User{
         }
 
     }
-
+//
     guessWord(word){
         let res = this.puzzle.guessWord(word);
         if(res){
@@ -219,7 +219,7 @@ class Streln extends Special{
         return puzzle;
     }
 }
-
+//
 class Vowels extends Special{
     use(currentPuzzle){
         let puzzle = currentPuzzle;
@@ -355,8 +355,8 @@ function UpdateHeader(){
     let header = document.createTextNode(user.name + "_______"+user.guesses+" guesses remain_______Level: "+user.level+"_______"+user.score+" points");
     document.getElementById("header").appendChild(header);
 }
-
-function UpdateBoard(){//
+//
+function UpdateBoard(){
     document.getElementById("board").innerHTML = "";
     let boardString = " ";
     user.puzzle.currentBoard.forEach(function(v){
@@ -366,8 +366,8 @@ function UpdateBoard(){//
     let board = document.createTextNode(boardString);
     document.getElementById("board").appendChild(board);
 }
-
-function UpdateInventory(){//
+//
+function UpdateInventory(){
     document.getElementById("streln").innerHTML = "";
     let streln = document.createTextNode(user.specials.inventory.Streln);
     document.getElementById("streln").appendChild(streln);
@@ -386,9 +386,8 @@ function UpdateInventory(){//
 }
 
 
-
+//
 function Main(){
-    //
     let validator = new Validator();
     let userName = validator.getString("Please enter your name.");
     if (userName === null){
@@ -408,7 +407,7 @@ function Main(){
     }
 
 }
-
+//
 function YouWin(){
     let types = ["Streln","Vowels","PickALetter","FreeLetter"];
     let randIndex1 = Math.round((Math.random()*(types.length-1)));
@@ -433,7 +432,7 @@ function YouWin(){
     UpdateInventory();
 
 }
-
+//
 function YouLose(){
     document.getElementById("board").innerHTML = "Above is your final score.";
     document.getElementById("guess").innerHTML = "You have run out of guesses.";
